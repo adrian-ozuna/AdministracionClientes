@@ -12,6 +12,10 @@ public class Address
     public string Street { get; set; }
     
     [Required]
+    [MaxLength(250)]
+    public string City { get; set; }
+    
+    [Required]
     [MaxLength(5)]
     public string Zipcode { get; set; }
 

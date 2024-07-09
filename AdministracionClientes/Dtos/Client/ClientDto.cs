@@ -13,7 +13,5 @@ public class ClientDto
     [MaxLength(250)]
     public string LastName { get; set; }
 
-    public int CompanyId { get; set; }
-
     public ICollection<AddressDto> Addresses { get; set; }
 }

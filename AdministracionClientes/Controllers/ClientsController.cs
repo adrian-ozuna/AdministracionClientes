@@ -34,18 +34,6 @@ namespace AdministracionClientes.Controllers
 
             return Ok(client);
         }
-        
-        [HttpGet("company/{id}")]
-        public async Task<ActionResult<ClientDto>> GetByCompanyId(int id)
-        {
-            var client = await _clientService.GetClientByCompanyIdAsync(id);
-            if (client == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(client);
-        }
 
         [HttpPost]
         public async Task<ActionResult<ClientDto>> Post(CreateClientDto dto)

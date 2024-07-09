@@ -32,14 +32,6 @@ public class ClientService : IClientService
         return _mapper.Map<ClientDto>(client);
     }
 
-    public async Task<IEnumerable<ClientDto>> GetClientByCompanyIdAsync(int id)
-    {
-        var clients = await _context.Clients.Include(c => c.Addresses)
-            .Where(c => c.CompanyId == id)
-            .ToListAsync();
-        return _mapper.Map<IEnumerable<ClientDto>>(clients);
-    }
-
     public async Task<ClientDto> CreateClientAsync(CreateClientDto dto)
     {
         var client = _mapper.Map<Client>(dto);

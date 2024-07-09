@@ -10,6 +10,4 @@ public class CreateClientDto
     [Required]
     [MaxLength(250)]
     public string LastName { get; set; }
-
-    public int CompanyId { get; set; }
 }

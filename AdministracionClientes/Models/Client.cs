@@ -15,8 +15,5 @@ public class Client
     [MaxLength(250)]
     public string LastName { get; set; }
 
-    public int CompanyId { get; set; }
-    public Company Company { get; set; }
-
     public ICollection<Address> Addresses { get; set; }
 }
