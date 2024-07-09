@@ -1,0 +1,25 @@
+﻿services:
+  administracionclientes:
+    image: administracionclientes
+    build:
+      context: .
+      dockerfile: AdministracionClientes/Dockerfile
+  db:
+    image: postgres:latest
+    restart: always
+    shm_size: 128mb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: oriontek_prueba
+      POSTGRES_PASSWORD: oriontek_prueba
+      POSTGRES_DB: oriontek_db1
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - oriontekPruebaNetwork
+
+volumes:
+  db_data:
+networks:
+  oriontekPruebaNetwork:
